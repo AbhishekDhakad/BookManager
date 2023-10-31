@@ -1,4 +1,3 @@
-const asyncHandler = require("express-async-handler");
 const bookDb = require("../models/bookModel");
 
 //@desc Get all Books
@@ -21,9 +20,9 @@ const getBook = async (req, res) => {
     const { id } = req.params;
     const book = await bookDb.findById(id);
     if (!book) {
-      return res.status(404).json({ status: "error", message: "Book not Found" });
+      return res.status(404).json({ message: "Book not Found" });
     }
-    res.status(200).json({ status: "success", book });
+    res.status(200).json({ book });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -37,7 +36,7 @@ const createBook = async (req, res) => {
     const { title, author, summary } = req.body;
 
     if (!title || !author) {
-      return res.status(400).json({ status: "error", message: "All field required" });
+      return res.status(400).json({ message: "All field required" });
     }
 
     const book = await bookDb.create({
@@ -46,7 +45,7 @@ const createBook = async (req, res) => {
       summary,
     });
 
-    res.status(201).json({ status: "success", book });
+    res.status(201).json({ book });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -60,10 +59,10 @@ const updateBook = async (req, res) => {
     const { id } = req.params;
     const book = await bookDb.findByIdAndUpdate(id, req.body);
     if (!book) {
-      return res.status(404).json({ status: "error", message: "Book not Found" });
+      return res.status(404).json({ message: "Book not Found" });
     }
     const updatedBook = await bookDb.findById(id);
-    res.status(200).json({ status: "success", updatedBook });
+    res.status(200).json({ updatedBook });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -79,9 +78,9 @@ const deleteBook = async (req, res) => {
     if (!book) {
       return res
         .status(404)
-        .json({ status: "error", message: "Book not Found" });
+        .json({ message: "Book not Found" });
     }
-    res.status(200).json({ status: "success", book });
+    res.status(200).json({ book });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
