@@ -18,11 +18,11 @@
 ```bash
   npm i
 ```
-- Create a .env file and add PORT environment variable
-- Create a MongoDB account and get the mongodb connection url and add in .env file as MONGO_CONNECTION for connecting the server and the Database
+- Create a .env file and add the PORT environment variable
+- Create a MongoDB account, get the MongoDB connection URL and add in the .env file as MONGO_CONNECTION for connecting the server and the Database
 
   
-- starting using
+- start using
 
 ```bash
   npm run start
