@@ -21,6 +21,12 @@
 - Create a .env file and add the PORT environment variable
 - Create a MongoDB account, get the MongoDB connection URL and add in the .env file as MONGO_CONNECTION for connecting the server and the Database
 
+```bash
+  PORT=
+  MONGO_CONNECTION=
+```
+
+
   
 - start using
 
