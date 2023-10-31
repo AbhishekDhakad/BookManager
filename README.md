@@ -38,7 +38,7 @@ PORT is the port that was added in environment variable
 - Install dependencies
 
 ```bash
-  npm i
+  npm install
 ```
 - Create a .env file and add the PORT environment variable
 - Create a MongoDB account, get the MongoDB connection URL, and add in the .env file as MONGO_CONNECTION for connecting the server and the Database
@@ -53,6 +53,31 @@ PORT is the port that was added in environment variable
 ```bash
   npm run start
 ```
+
+## Deploy Application on AWS EC2
+- Securely SSH into your AWS EC2 Linux instance.
+- Install NodeJS and NPM using nvm
+  ```bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+    . ~/.nvm/nvm.sh
+    nvm install node
+  ```
+- Install Git and clone repository from GitHub
+  ```bash
+    sudo yum update -y
+    sudo yum install git -y
+    git clone https://github.com/AbhishekDhakad/BookManager.git
+  ```
+- Install dependencies
+  ```bash
+    cd BookManager
+    npm install
+  ```
+- Run the application
+  ```bash
+    npm run start
+- Configure security group to access via public URL
+- Access the application in the browser
 
 ## 🚀 Techonologies
 - Nodejs
